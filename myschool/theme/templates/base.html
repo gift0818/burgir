@@ -1,0 +1,99 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <title>MySchool | Shaping the Future</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    {% tailwind_css %}
+
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(17, 24, 39, 0.85); /* gray-900 */
+        }
+        .hero-gradient {
+            background: linear-gradient(to right, rgba(17, 24, 39, 0.95), rgba(17, 24, 39, 0.4));
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100 selection:bg-pink-600 selection:text-white">
+
+<!-- Navigation -->
+<nav class="fixed w-full z-50 glass-nav border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center">
+                <span class="material-icons text-white">school</span>
+            </div>
+            <span class="text-2xl font-extrabold tracking-tight text-white">
+                My<span class="text-pink-600">School</span>
+            </span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-8 font-medium text-white">
+            <a class="text-pink-600 border-b-2 border-pink-600 pb-1" href="#">Home</a>
+            <a class="hover:text-pink-600 transition" href="#">Elementary</a>
+            <a class="hover:text-pink-600 transition" href="#">High School</a>
+            <a class="hover:text-pink-600 transition" href="#">College</a>
+        </div>
+
+        <button class="px-6 py-2.5 bg-pink-600 hover:bg-pink-700 text-white font-semibold rounded-lg transition shadow-lg shadow-pink-600/20">
+            Enroll Now
+        </button>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover"
+             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAox79wOVTC7XFavxHxdiYT292YXLFs7iZ8Yzz4blNpmsxA3WDiG0TX0Hm-rVF0oM6_X6M31HUxqs5-kjIFYL6g_Y_csBKYBylnNAqAaX2EtveWWu_O7bXszUeAJ_sikYodSXzAqq5HWTkFYq7DUdvNU8TaSL4l6_phhlQxGUpvEcOSTf6QYAcOppcThJJ2DENk3AJYqqsu3FrxB5M_3J31mINHUGAtS9d2JByLUC4rOnVM3I7IdIetL0V1qdudbEUrCQKEE_pjLdId"/>
+        <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 pt-20">
+        <div class="max-w-3xl">
+            <span class="inline-block px-4 py-1.5 bg-pink-600/20 text-pink-600 border border-pink-600/30 rounded-full text-sm font-semibold mb-6">
+                Registration for 2024 is now open
+            </span>
+
+            <h1 class="text-6xl md:text-8xl font-extrabold leading-tight text-white mb-8">
+                Shape Your <br>
+                <span class="text-pink-600">Bright Future</span>
+            </h1>
+
+            <p class="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
+                Experience a modern education designed for the digital world.
+            </p>
+
+            <div class="flex flex-wrap gap-4">
+                <button class="px-8 py-4 bg-pink-600 text-white text-lg font-bold rounded-xl hover:scale-105 hover:bg-pink-700 transition shadow-2xl shadow-pink-600/30">
+                    Get Started
+                </button>
+                <button class="px-8 py-4 bg-white/10 hover:bg-white/20 text-white text-lg font-bold rounded-xl backdrop-blur-md border border-white/20 transition">
+                    Explore Programs
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-100 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 py-10 text-center">
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+        © 2024 MySchool Educational Institution. All rights reserved.
+    </p>
+</footer>
+
+</body>
+</html>
