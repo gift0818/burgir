@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="flex flex-col gap-6">
+    <div class="h-64 overflow-hidden rounded-2xl bg-muted shadow-md">
+        <img src="https://i.pinimg.com/1200x/fa/57/76/fa5776c9ef85fff6a88a2a73287ddbef.jpg">
+    </div>
+    <h1 class="text-4xl font-bold text-primary">High School</h1>
+    <p class="text-lg text-muted-foreground">Preparing students for academic success and personal growth.</p>
+    <a href="{% url 'hs_enroll' %}" class="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary/90 shadow-sm transition-transform hover:scale-105">
+        Enroll Now
+    </a>
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="flex flex-col gap-6">
+    <div class="h-64 overflow-hidden rounded-2xl bg-muted shadow-md">
+        <img src="https://i.pinimg.com/originals/b8/12/29/b81229482755f415698782fbd613fd6a.gif">
+    </div>
+    <h1 class="text-4xl font-bold text-primary">College Department</h1>
+    <p class="text-lg text-muted-foreground">Advance your career with our world-class undergraduate programs.</p>
+    <a href="{% url 'college_enroll' %}" class="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary/90 shadow-sm transition-transform hover:scale-105">
+        Enroll Now
+    </a>
+</section>
+{% endblock %}

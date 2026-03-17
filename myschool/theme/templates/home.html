@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="flex flex-col gap-6">
+    <h1 class="text-5xl font-bold tracking-tight text-foreground">
+        Nurturing Minds, <span class="text-primary"> Become a Princess</span>
+    </h1>
+    <p class="text-lg text-muted-foreground">
+        Welcome to Barbie Princess Charm School! Higher education for lower attention spans. Select a department to begin your journey.
+    </p>
+    <div class="grid gap-4 sm:grid-cols-3 pt-6">
+        <a href="{% url 'college_home' %}" class="p-4 border rounded-xl bg-card hover:border-primary transition-colors text-center font-bold">College</a>
+        <a href="{% url 'hs_home' %}" class="p-4 border rounded-xl bg-card hover:border-primary transition-colors text-center font-bold">High School</a>
+        <a href="{% url 'elem_home' %}" class="p-4 border rounded-xl bg-card hover:border-primary transition-colors text-center font-bold">Elementary</a>
+    </div>
+</section>
+{% endblock %}

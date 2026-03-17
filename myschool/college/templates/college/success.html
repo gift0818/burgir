@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="flex flex-col items-center justify-center py-12 text-center">
+    <div class="mb-6 flex h-24 w-24 items-center justify-center rounded-full bg-primary/20 text-5xl animate-bounce">
+        ✨
+    </div>
+    <h1 class="text-4xl font-bold text-primary mb-4">Application Received!</h1>
+    <p class="text-lg text-muted-foreground max-w-md">
+        Congratulations <strong>{{ f_name }}</strong>! Your enrollment request for Barbie Princess Charm School has been sent to the royal advisors.
+    </p>
+    <div class="mt-8">
+        <a href="{% url 'home_index' %}" class="rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white hover:opacity-90 transition-all">
+            Return to Royal Grounds
+        </a>
+    </div>
+</section>
+{% endblock %}

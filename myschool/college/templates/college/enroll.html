@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="rounded-xl border bg-card p-8 shadow-sm">
+    <h2 class="text-3xl font-bold text-primary mb-2">College Enrollment</h2>
+    <p class="text-muted-foreground mb-8">Please fill out the form below to start your application.</p>
+{% if error %}
+    <div class="bg-pink-100 border border-pink-400 text-pink-700 px-4 py-3 rounded-xl mb-4 text-sm">
+        ✨ {{ error }}
+    </div>
+{% endif %} 
+    <form method="POST" class="space-y-6">
+        {% csrf_token %}
+        
+        <div class="grid gap-4 sm:grid-cols-2">
+            <div class="space-y-2">
+                <label class="text-sm font-medium">First Name</label>
+                <input type="text" name="first_name" required class="w-full rounded-lg border bg-background px-4 py-2 focus:ring-2 focus:ring-primary outline-none">
+            </div>
+            <div class="space-y-2">
+                <label class="text-sm font-medium">Last Name</label>
+                <input type="text" name="last_name" required class="w-full rounded-lg border bg-background px-4 py-2 focus:ring-2 focus:ring-primary outline-none">
+            </div>
+        </div>
+
+        <div class="space-y-2">
+            <label class="text-sm font-medium">Email Address</label>
+            <input type="email" name="email" required class="w-full rounded-lg border bg-background px-4 py-2 focus:ring-2 focus:ring-primary outline-none">
+        </div>
+
+        <button type="submit" class="w-full rounded-lg bg-primary py-3 font-semibold text-white hover:bg-primary/90 transition-colors">
+            Submit Application
+        </button>
+    </form>
+</div>
+{% endblock %}

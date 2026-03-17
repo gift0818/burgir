@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="flex flex-col gap-6">
+    <div class="h-64 overflow-hidden rounded-2xl bg-muted shadow-md">
+        <img src="https://i.pinimg.com/1200x/9f/a6/11/9fa6115c0b120ff8194b725e5721d072.jpg" class="w-full h-full object-cover">
+    </div>
+    <h1 class="text-4xl font-bold text-primary">Elementary School</h1>
+    <p class="text-lg text-muted-foreground">Building strong foundations through interactive learning and discovery.</p>
+    <a href="{% url 'elem_enroll' %}" class="inline-flex w-fit items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white hover:bg-primary/90 shadow-sm transition-transform hover:scale-105">
+        Enroll Now
+    </a>
+</section>
+{% endblock %}

@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -39,6 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tailwind',
     'theme',
+    'elementary',
+    'highschool',
+    'college',
+    'home',
 ]
 TAILWIND_APP_NAME = 'theme'
 
@@ -66,6 +71,7 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [],
         'APP_DIRS': True,
+        'DIRS': [BASE_DIR / 'templates'],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.request',
@@ -128,3 +134,6 @@ INTERNAL_IPS = {
 STATIC_URL = 'static/'
 # Use the 'r' prefix for Windows paths to handle backslashes correctly
 NPM_BIN_PATH = r"C:\Program Files\nodejs\npm.cmd"
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'theme/static'), # Points to your specific folder
+]

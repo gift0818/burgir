@@ -1,26 +1,25 @@
 from django.shortcuts import render
-from . models import Student
-# Create your views here.
-def enrol(request):
-    if request.method == "POST":
-        firstname = request.POST.get("firstname", "").strip()
-        lastname = request.POST.get("lastname", "").strip()
-        age = request.POST.get("age", "").strip()
-        gender = request.POST.get("gender", "").strip()
+from .models import Enrollment
+from django.db import IntegrityError 
 
-        student = Student.objects.create(
-            firstname=firstname,
-            lastname=lastname,
-            age=int(age) if age else 0,
-            gender=gender
-        )
-        info = {
-            "submitted": True,
-            "firstname": firstname,
-            "lastname": lastname,
-            "age": age,
-            "gender": gender,
-        }
-        return render(request, "enroll.html", info)
-    return render(request, "enroll.html")
+def index(request):
+    return render(request, 'highschool/index.html') # Match your folder!
 
+def enroll(request):
+    if request.method == 'POST':
+        f_name = request.POST.get('first_name')
+        l_name = request.POST.get('last_name')
+        email_addr = request.POST.get('email')
+
+        try:
+            Enrollment.objects.create(
+                first_name=f_name, last_name=l_name, email=email_addr
+            )
+            return render(request, 'highschool/success.html', {'f_name': f_name})
+        except IntegrityError:
+            return render(request, 'highschool/enroll.html', {
+                'error': "You have already enrolled!",
+                'f_name': f_name, 'l_name': l_name
+            })
+
+    return render(request, 'highschool/enroll.html')
